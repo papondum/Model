@@ -1,0 +1,27 @@
+Base path: /Applications/Unity/Unity.app/Contents
+Pipe name: \\.\pipe\UnityShaderCompiler-1--1595985452
+Cmd: getPlatforms
+Cmd: preprocess
+  error: 2 plat 12 at (65): Can't find include file CharaSkin.cg
+  insize=766 outsize=709 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (69): Can't find include file CharaMain.cg
+  error: 2 plat 12 at (104): Can't find include file CharaOutline.cg
+  insize=1107 outsize=1013 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (63): Can't find include file CharaSkin.cg
+  insize=757 outsize=700 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (69): Can't find include file CharaMain.cg
+  error: 2 plat 12 at (104): Can't find include file CharaOutline.cg
+  insize=1113 outsize=1019 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (59): Can't find include file CharaSkin.cg
+  insize=662 outsize=605 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (61): Can't find include file CharaSkin.cg
+  error: 2 plat 12 at (96): Can't find include file CharaOutline.cg
+  insize=870 outsize=777 ok=0
+Cmd: preprocess
+  error: 2 plat 12 at (63): Can't find include file CharaSkin.cg
+  insize=769 outsize=712 ok=0
