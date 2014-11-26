@@ -8,6 +8,10 @@ public class CharacterMovement : MonoBehaviour {
 	public float turnSpeed = 90.0f;
 	public float gravity = 9.81f;
 	public float jumpSpeed = 5f;
+	public float jumpAcceleratingSpeed = 3.5f;
+	public float jumpDeceleratingSpeed = 1.8f;
+
+	public float jumpBurstSpeed = 3.7f;
 	public float moveSpeed = 5.0f;
 
 	private float jumpDelay = 3.5f;
@@ -19,7 +23,7 @@ public class CharacterMovement : MonoBehaviour {
 	private float currentJumpTime;
 	private float currentJumpUpWaitTime;
 
-	enum JumpState { Begin,Jump,FinishJump};
+	enum JumpState { NotJump,Begin,Jump,Jumped,FinishJump};
 	private JumpState jumpState;
 
 
@@ -33,6 +37,7 @@ public class CharacterMovement : MonoBehaviour {
 		animator = this.GetComponent<Animator> ();
 
 		isJump = false;
+		jumpState = JumpState.NotJump;
 	}
 	
 	// Update is called once per frame
@@ -54,9 +59,11 @@ public class CharacterMovement : MonoBehaviour {
 			}
 			if (currentJumpTime <= 0) {
 				animator.SetBool ("Jump", false);
+				jumpState = JumpState.FinishJump;
 			}
 			if(currentJumpDelay <= 0){
 				isJump = false;
+				jumpState = JumpState.NotJump;
 			}
 
 		}
@@ -80,15 +87,29 @@ public class CharacterMovement : MonoBehaviour {
 			ySpeed = 0;
 			if(jumpState == JumpState.Jump){
 				ySpeed = jumpSpeed;
-				jumpState = JumpState.FinishJump;
+				jumpState = JumpState.Jumped;
 			}
 		}
 	
 		//rotate
-		this.transform.Rotate (0, inputX * turnSpeed * Time.deltaTime, 0);
-
 
 		Vector3 vel = transform.forward * moveSpeed * inputY;
+
+		if (jumpState == JumpState.Begin || jumpState == JumpState.Jump) {
+			vel = transform.forward * jumpAcceleratingSpeed;
+		}
+		else if (jumpState == JumpState.Jumped) {
+			vel = transform.forward * jumpBurstSpeed;
+		}
+		else if( jumpState == JumpState.FinishJump){
+			vel = transform.forward * jumpDeceleratingSpeed;
+
+		}
+		else if ( jumpState == JumpState.NotJump){
+			this.transform.Rotate (0, inputX * turnSpeed * Time.deltaTime, 0);
+			vel = transform.forward * moveSpeed * inputY;
+		}
+
 		vel.y = ySpeed;
 		characterController.Move( vel * Time.deltaTime );
 		
