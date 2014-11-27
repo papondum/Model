@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpawnItem : MonoBehaviour {
+public class ItemSpawner : MonoBehaviour {
 
-	GameObject [] itemTospawns;
+	public Item [] itemTospawns;
 	
 	public float timeToSpawn = 5f;
 	private float timer;
@@ -24,8 +24,11 @@ public class SpawnItem : MonoBehaviour {
 			int indexSpawPointRandom = Random.Range( 0 , ItemSpawnPoints.Length );
 			var itemSpawnPoint = ItemSpawnPoints[indexSpawPointRandom].GetComponent<ItemSpawnPoint>();
 
-			int itemToSpawnIndex = Random.Range( 0 , itemTospawns.Length );
-			itemSpawnPoint.SpawnItem( itemTospawns[itemToSpawnIndex]);
+			itemSpawnPoint.SpawnBox();
+
+			timer = timeToSpawn;
 		}
 	}
+
+
 }

@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/SpawnItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/KIdGayAI.cs">
     <Files>
-      <File FileName="Assets/_Script/SpawnEnemy.cs" Line="11" Column="2" />
-      <File FileName="Assets/_Script/SpawnItem.cs" Line="6" Column="1" />
+      <File FileName="Assets/_Script/ItemRandomer.cs" Line="13" Column="36" />
+      <File FileName="Assets/_Script/KIdGayAI.cs" Line="12" Column="21" />
+      <File FileName="Assets/_Script/BGMChanger.cs" Line="8" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

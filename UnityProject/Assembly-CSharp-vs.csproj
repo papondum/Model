@@ -46,11 +46,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Script\BGMChanger.cs" />
      <Compile Include="Assets\_Script\CharacterMovement.cs" />
+     <Compile Include="Assets\_Script\DildoPlayer.cs" />
+     <Compile Include="Assets\_Script\EffectAudioSource.cs" />
+     <Compile Include="Assets\_Script\Item\DildoItem.cs" />
+     <Compile Include="Assets\_Script\Item\GirlItem.cs" />
+     <Compile Include="Assets\_Script\Item\Item.cs" />
+     <Compile Include="Assets\_Script\Item\PerfumeItem.cs" />
+     <Compile Include="Assets\_Script\Item\StinkItem.cs" />
+     <Compile Include="Assets\_Script\ItemRandomer.cs" />
      <Compile Include="Assets\_Script\ItemSpawnPoint.cs" />
+     <Compile Include="Assets\_Script\ItemSpawner.cs" />
      <Compile Include="Assets\_Script\KIdGayAI.cs" />
      <Compile Include="Assets\_Script\SpawnEnemy.cs" />
-     <Compile Include="Assets\_Script\SpawnItem.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

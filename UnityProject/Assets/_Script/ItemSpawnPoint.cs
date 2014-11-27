@@ -3,15 +3,30 @@ using System.Collections;
 
 public class ItemSpawnPoint : MonoBehaviour {
 
+	public ItemRandomer itemRandomer;
 
-	private GameObject currentItem; 
+	private float rotateSpeed = 120f;
+	private float highDiv = 0.15f;
 
-	public void SpawnItem(GameObject item)
+	private bool hasItem;
+
+	void Update()
 	{
-		if (currentItem != null) {
-			Destroy (currentItem);
+		renderer.enabled = hasItem;
+		transform.Rotate (new Vector3 (0, Time.deltaTime * rotateSpeed, 0));
+
+		float y = transform.position.y + ( Mathf.Sin(Time.time) * highDiv * Time.deltaTime);
+		transform.position = new Vector3 (transform.position.x, y , transform.position.z);
+	}
+
+	void OnTriggerEnter(Collider other) {
+		if (other.tag.Equals ("Player") && hasItem) {
+			itemRandomer.RandomItem();
+			hasItem = false;
 		}
-		Instantiate( item, transform.position , transform.rotation);
-		currentItem = item;
+	}
+
+	public void SpawnBox(){
+		hasItem = true;
 	}
 }
