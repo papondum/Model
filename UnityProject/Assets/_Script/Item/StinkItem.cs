@@ -3,7 +3,6 @@ using System.Collections;
 
 public class StinkItem : Item {
 
-	public float Duration = 7f;
 	public float speedFactor = 0.5f;
 	public override void Use ()
 	{

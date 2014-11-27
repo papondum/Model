@@ -9,6 +9,8 @@ public class KIdGayAI : MonoBehaviour {
 	public float maxDistance = 10f;
 	public float distanceToStopFollowing = 0.6f;
 
+	private bool isGreeting;
+
 	public bool isBoss;
 	private BGMChanger bgmChanger;
 
@@ -38,6 +40,8 @@ public class KIdGayAI : MonoBehaviour {
 		tmpSpeed = moveSpeed;
 
 		bgmChanger = GameObject.FindGameObjectWithTag("BGMAudioSource").GetComponent<BGMChanger>();
+
+		isGreeting = true;
 	}
 	
 	// Update is called once per frame
@@ -51,9 +55,15 @@ public class KIdGayAI : MonoBehaviour {
 			if(isBoss){
 				bgmChanger.playBossBGM();
 			}
+
+			if(isGreeting && !isBoss){
+				audio.Play();
+				isGreeting = false;
+			}
 		}
 		else{
 			aiState = KidGayAiState.Idle;
+			isGreeting = true;
 		}
 
 

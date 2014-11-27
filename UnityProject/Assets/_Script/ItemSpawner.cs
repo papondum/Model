@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class ItemSpawner : MonoBehaviour {
-
-	public Item [] itemTospawns;
 	
 	public float timeToSpawn = 5f;
 	private float timer;

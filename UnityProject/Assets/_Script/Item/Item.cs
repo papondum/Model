@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Item : MonoBehaviour {
 
+	public float Duration;
+
 	public AudioSource audioSource;
 	public AudioClip [] sound;
 	public Sprite Icon;

@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class PerfumeItem : Item {
-	
-	public float Duration = 7f;
+
 	public float speedFactor = 1.5f;
 
 	public override void Use ()
