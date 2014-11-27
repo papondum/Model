@@ -114,9 +114,13 @@ public class CharacterMovement : MonoBehaviour {
 
 		vel.y = ySpeed;
 		characterController.Move( vel * Time.deltaTime );
-		
-
 	}
 
-
 }
+
+
+
+
+
+
+

@@ -16,12 +16,19 @@ public class KIdGayAI : MonoBehaviour {
 
 	enum KidGayAiState { Follow , Idle , RandomMove};
 
+	
+	private float tmpSpeed;
+	private float changeSpeedTimer;
+
+
+
 	// Use this for initialization
 	void Start () {
 		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		animator = this.GetComponent<Animator> ();
 
 		aiState = KidGayAiState.Idle;
+		tmpSpeed = moveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -43,6 +50,12 @@ public class KIdGayAI : MonoBehaviour {
 			Idle();
 		}
 
+
+		//speed timer
+		changeSpeedTimer -= Time.deltaTime;
+		if (changeSpeedTimer < 0) {
+			moveSpeed = tmpSpeed;
+		}
 
 	}
 
@@ -74,8 +87,27 @@ public class KIdGayAI : MonoBehaviour {
 		
 		animator.SetFloat("Direction" ,dir);
 	}
+
 	void Idle()
 	{
 		animator.SetFloat("Speed" , 0f);
+	}
+	
+	public void SpeedUp(float duration)
+	{
+		moveSpeed = tmpSpeed;
+		tmpSpeed = moveSpeed;
+		
+		moveSpeed = moveSpeed * 1.2f;
+		changeSpeedTimer = duration;
+	}
+	
+	public void SpeedDown(float duration)
+	{
+		moveSpeed = tmpSpeed;
+		tmpSpeed = moveSpeed;
+		
+		moveSpeed = moveSpeed * 0.8f;
+		changeSpeedTimer = duration;
 	}
 }
