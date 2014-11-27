@@ -6,6 +6,9 @@ public class Player : MonoBehaviour {
 
 	public float Health = 10000f;
 	public Slider HPSlider;
+	public Image AvartarImage;
+	public Sprite[] AvartarSprites;
+
 	private float currentHealth;
 	// Use this for initialization
 	void Start () {
@@ -18,7 +21,14 @@ public class Player : MonoBehaviour {
 		if (currentHealth < 0) {
 			Debug.Log("Game Over");		
 		}
-		HPSlider.value = currentHealth / Health;
+
+		float hpValueRatio = currentHealth / Health;
+		HPSlider.value = hpValueRatio;
+
+		int avartarIndex = (int)( hpValueRatio * AvartarSprites.Length  );
+		avartarIndex = Mathf.Clamp (avartarIndex, 0, AvartarSprites.Length - 1);
+		AvartarImage.sprite = AvartarSprites [avartarIndex];
+
 	}
 
 	public void Hurt(float damage)
