@@ -9,10 +9,12 @@ public class KIdGayAI : MonoBehaviour {
 	public float maxDistance = 10f;
 	public float distanceToStopFollowing = 0.6f;
 
-	private bool isGreeting;
+	public float damage;
 
 	public bool isBoss;
 	private BGMChanger bgmChanger;
+
+	private bool isGreeting;
 
 	private KidGayAiState aiState;
 
@@ -25,15 +27,17 @@ public class KIdGayAI : MonoBehaviour {
 	private float tmpSpeed;
 	private float changeSpeedTimer;
 
-	private GameObject player;
+	private GameObject playerObject;
+	private Player player;
 	private DildoPlayer dildoPlayer;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		dildoPlayer = player.GetComponent<DildoPlayer> ();
+		playerObject = GameObject.FindGameObjectWithTag ("Player");
+		dildoPlayer = playerObject.GetComponent<DildoPlayer> ();
+		player = playerObject.GetComponent<Player>();
 
-		playerTransform = player.transform;
+		playerTransform = playerObject.transform;
 		animator = this.GetComponent<Animator> ();
 
 		aiState = KidGayAiState.Idle;
@@ -84,6 +88,11 @@ public class KIdGayAI : MonoBehaviour {
 		changeSpeedTimer -= Time.deltaTime;
 		if (changeSpeedTimer < 0) {
 			moveSpeed = tmpSpeed;
+		}
+
+		//hurt player in distance
+		if (currentDistance <= distanceToStopFollowing) {
+			player.Hurt(damage*Time.deltaTime);
 		}
 
 	}

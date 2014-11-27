@@ -35,8 +35,15 @@ public class ItemRandomer : MonoBehaviour {
 		}
 
 		emptyItemTimer -= Time.deltaTime;
+
+		Color color = imageIcon.color;
 		if (emptyItemTimer < 0 && !isRandomItem) {
-			imageIcon.sprite = emptyItemSprite;		
+			color.a = 0f;
+			imageIcon.color = color;
+		}
+		else{
+			color.a = 255f;
+			imageIcon.color = color;
 		}
 
 

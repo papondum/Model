@@ -1,10 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/KIdGayAI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/Player.cs">
     <Files>
-      <File FileName="Assets/_Script/ItemRandomer.cs" Line="13" Column="36" />
-      <File FileName="Assets/_Script/KIdGayAI.cs" Line="12" Column="21" />
-      <File FileName="Assets/_Script/BGMChanger.cs" Line="8" Column="1" />
+      <File FileName="Assets/_Script/Player.cs" Line="21" Column="3" />
+      <File FileName="Assets/_Script/KIdGayAI.cs" Line="94" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

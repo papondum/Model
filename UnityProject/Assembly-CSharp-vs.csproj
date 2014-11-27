@@ -59,6 +59,8 @@
      <Compile Include="Assets\_Script\ItemSpawnPoint.cs" />
      <Compile Include="Assets\_Script\ItemSpawner.cs" />
      <Compile Include="Assets\_Script\KIdGayAI.cs" />
+     <Compile Include="Assets\_Script\Player.cs" />
+     <Compile Include="Assets\_Script\ScoreCounter.cs" />
      <Compile Include="Assets\_Script\SpawnEnemy.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
