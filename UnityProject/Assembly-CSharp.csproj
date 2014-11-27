@@ -46,8 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\CharacterMovement.cs" />
-     <Compile Include="Assets\Script\KIdGayAI.cs" />
+     <Compile Include="Assets\_Script\CharacterMovement.cs" />
+     <Compile Include="Assets\_Script\ItemSpawnPoint.cs" />
+     <Compile Include="Assets\_Script\KIdGayAI.cs" />
+     <Compile Include="Assets\_Script\SpawnEnemy.cs" />
+     <Compile Include="Assets\_Script\SpawnItem.cs" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />

@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/CharacterMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Script/SpawnItem.cs">
     <Files>
-      <File FileName="Assets/Script/CharacterMovement.cs" Line="65" Column="68" />
+      <File FileName="Assets/_Script/SpawnEnemy.cs" Line="11" Column="2" />
+      <File FileName="Assets/_Script/SpawnItem.cs" Line="6" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

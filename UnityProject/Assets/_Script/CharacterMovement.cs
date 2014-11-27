@@ -107,7 +107,9 @@ public class CharacterMovement : MonoBehaviour {
 		}
 		else if ( jumpState == JumpState.NotJump){
 			this.transform.Rotate (0, inputX * turnSpeed * Time.deltaTime, 0);
-			vel = transform.forward * moveSpeed * inputY;
+
+			float velMoveSpeed = inputY < 0f ? moveSpeed*0.7f : moveSpeed; //walk forward or backward ( back speed = 0.7*speed)
+			vel = transform.forward * velMoveSpeed * inputY;
 		}
 
 		vel.y = ySpeed;
